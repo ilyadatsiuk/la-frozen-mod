@@ -1,14 +1,14 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "maksum-gay",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Maksim Gay Mod for Land",
+	"description": "Вентилятор сломался 卐, нужно вызвать мастера по номеру 1488...\nМастер пришёл и чинит вентилятор 卐 инструментами ☭...\nОказывается в вентиляторе замкнуло провода ꑭ\nМастер ушёл и началась гроза ᛋᛋ\nЯ выключил вентилятор опустив кнопку вниз V и пошёл спать\nZZZ\n",
 	"authors": [
-		"Me!"
+		"Ilya Datsiuk"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
+		"homepage": "ilya.datsiuk@gmil.com",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"com.datdevelop.MaksimGay"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"com.datdevelop.MaksimGayClient"
 		]
 	},
 	"mixins": [
@@ -31,7 +31,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.0",
-		"minecraft": "~1.20.4",
+		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
 	},
