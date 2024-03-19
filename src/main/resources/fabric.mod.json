@@ -2,8 +2,8 @@
 	"schemaVersion": 1,
 	"id": "maksum-gay",
 	"version": "${version}",
-	"name": "Maksim Gay Mod for Land",
-	"description": "Вентилятор сломался 卐, нужно вызвать мастера по номеру 1488...\nМастер пришёл и чинит вентилятор 卐 инструментами ☭...\nОказывается в вентиляторе замкнуло провода ꑭ\nМастер ушёл и началась гроза ᛋᛋ\nЯ выключил вентилятор опустив кнопку вниз V и пошёл спать\nZZZ\n",
+	"name": "la-Frozen Mod for StoryLegends",
+	"description": "la-Frozen Mod for StoryLegends",
 	"authors": [
 		"Ilya Datsiuk"
 	],
@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.datdevelop.MaksimGay"
+			"com.datdevelop.LaFrozen"
 		],
 		"client": [
-			"com.datdevelop.MaksimGayClient"
+			"com.datdevelop.LaFrozenModClient"
 		]
 	},
 	"mixins": [
