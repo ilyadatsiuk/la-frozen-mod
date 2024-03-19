@@ -1,6 +1,7 @@
 package com.datdevelop;
 
 import com.datdevelop.command.FrozenCommand;
+import com.datdevelop.util.ModRegistries;
 import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -15,7 +16,7 @@ public class LaFrozen implements ModInitializer {
 		LOGGER.info("la-frozen Mod is loaded");
 		FrozenCommand command = new FrozenCommand();
 
-		command.register(dispatcher);
+		ModRegistries.registerModStuffs();
 	}
 
 

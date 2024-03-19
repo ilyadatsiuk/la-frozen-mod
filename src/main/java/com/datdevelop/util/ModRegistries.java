@@ -8,6 +8,6 @@ public class ModRegistries {
         registerCommands();
     }
     private static void registerCommands(){
-        CommandRegistrationCallback.EVENT.register(FrozenCommand::register);
+        CommandRegistrationCallback.EVENT.register((dispatcher, commandRegistryAccess, registrationEnvironment) -> FrozenCommand.register(dispatcher));
     }
 }
