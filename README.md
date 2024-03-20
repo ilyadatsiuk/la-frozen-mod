@@ -1,2 +1,2 @@
-# MaksimGay mod for LS Minecraft server
+# La-Frozen Mod for Story Legends 
 
