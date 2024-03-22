@@ -21,9 +21,11 @@ public class FreezingEffect extends StatusEffect {
     }
 
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (entity.getFrozenTicks() < 15 * (amplifier + 1)) {
-            entity.setFrozenTicks(entity.getFrozenTicks() + 3 * (amplifier + 1));
-            tickFrozenHands(((ServerPlayerEntity) entity));
+        if(entity.isPlayer()){
+            if (entity.getFrozenTicks() < 15 * (amplifier + 1)) {
+                entity.setFrozenTicks(entity.getFrozenTicks() + 3 * (amplifier + 1));
+                tickFrozenHands(((ServerPlayerEntity) entity));
+            }
         }
     }
 
