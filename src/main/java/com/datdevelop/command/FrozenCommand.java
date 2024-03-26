@@ -1,5 +1,6 @@
 package com.datdevelop.command;
 
+import com.datdevelop.LaFrozen;
 import com.datdevelop.effect.FreezingEffect;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -30,6 +31,7 @@ public class FrozenCommand {
         LOGGER.info("frozen Command init");
         dispatcher.register(
                 CommandManager.literal("frozen")
+                        .requires(source -> source.hasPermissionLevel(2))
                         .then(CommandManager.argument("nick", StringArgumentType.string())
                                 .then(CommandManager.argument("time", IntegerArgumentType.integer())
                                         .executes(FrozenCommand::run)
@@ -46,9 +48,10 @@ public class FrozenCommand {
         MinecraftServer server = src.getServer(); // get Minecraft server
         ServerPlayerEntity player = server.getPlayerManager().getPlayer(playerName); // get object of Player
 
-        StatusEffect FREEZE = StatusEffects.FIRE_RESISTANCE;
+        StatusEffect freezingEffect = LaFrozen.FREEZE;
+
         if (player.isPlayer() && player != null) {
-            player.addStatusEffect(new StatusEffectInstance(FREEZE, time * 20, 1));
+            player.addStatusEffect(new StatusEffectInstance(freezingEffect, time * 20, 1));
         }
         return 1;
     }
