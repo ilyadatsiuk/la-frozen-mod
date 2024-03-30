@@ -8,16 +8,17 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-import static net.fabricmc.loader.impl.util.log.Log.log;
-
 public class ModRegistries {
-    static Log log = new Log();
+    public static final StatusEffect FREEZE = new FreezingEffect();
     public static void registerModStuffs(){
         registerCommands();
-
+        registerEffects();
     }
     private static void registerCommands(){
         CommandRegistrationCallback.EVENT.register((dispatcher, commandRegistryAccess, registrationEnvironment) -> FrozenCommand.register(dispatcher));
+    }
+    private static void registerEffects(){
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("lafrozen", "freeze"), FREEZE);
     }
 
 }

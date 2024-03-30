@@ -6,12 +6,12 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import org.jetbrains.annotations.NotNull;
+
 
 public class FreezingEffect extends StatusEffect {
     public FreezingEffect() {
         super(
-                StatusEffectCategory.HARMFUL,
+                StatusEffectCategory.NEUTRAL,
                 0x2acaea
         );
     }
@@ -59,6 +59,6 @@ public class FreezingEffect extends StatusEffect {
             }
         }
 
-        player.sendMessage(Text.literal("§bВаши руки мёрзнут..."), true);
+        player.sendMessage(Text.literal("§bВам холодно..."), true);
     }
 }
