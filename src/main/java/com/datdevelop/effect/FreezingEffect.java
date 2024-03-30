@@ -32,11 +32,17 @@ public class FreezingEffect extends StatusEffect {
     private void tickFrozenHands(ServerPlayerEntity player) {
         boolean mainhand = !player.getMainHandStack().isEmpty();
         boolean offhand = !player.getOffHandStack().isEmpty();
-
+        player.sendMessage(Text.literal("§bВам холодно..."), true);
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         if (mainhand && offhand) {
             if (player.getRandom().nextBetween(0, 1) == 0) {
                 ItemStack itemStack = player.getMainHandStack().copy();
                 itemStack.setCount(1);
+
                 player.dropItem(itemStack, false, true);
                 player.getMainHandStack().decrement(1);
             } else {
@@ -59,6 +65,5 @@ public class FreezingEffect extends StatusEffect {
             }
         }
 
-        player.sendMessage(Text.literal("§bВам холодно..."), true);
     }
 }
