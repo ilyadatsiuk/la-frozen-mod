@@ -15,14 +15,15 @@ public class FreezingEffect extends StatusEffect {
                 0x2acaea
         );
     }
-
+    @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
         return true;
     }
 
+    @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         if(entity.isPlayer()){
-            if (entity.getFrozenTicks() < 250 * (amplifier + 1)) {
+            if (entity.getFrozenTicks() < 100 * (amplifier + 1)) {
                 entity.setFrozenTicks(entity.getFrozenTicks() + 3 * (amplifier + 1));
                 tickFrozenHands(((ServerPlayerEntity) entity));
             }
@@ -33,11 +34,7 @@ public class FreezingEffect extends StatusEffect {
         boolean mainhand = !player.getMainHandStack().isEmpty();
         boolean offhand = !player.getOffHandStack().isEmpty();
         player.sendMessage(Text.literal("§bВам холодно..."), true);
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+
         if (mainhand && offhand) {
             if (player.getRandom().nextBetween(0, 1) == 0) {
                 ItemStack itemStack = player.getMainHandStack().copy();
